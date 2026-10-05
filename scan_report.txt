@@ -1,0 +1,43 @@
+== 1. STRUCTURE ==
+Fichiers: 115 | Python: 66 | SQL: 2
+  .pytest_cache/  (5 fichiers)
+  .ruff_cache/  (10 fichiers)
+  docs/  (4 fichiers)
+  resources/  (11 fichiers)
+  scripts/  (3 fichiers)
+  src/  (57 fichiers)
+  tests/  (9 fichiers)
+  OK  main.py
+  OK  edupaie.spec
+  OK  EduPaieSetup.iss
+  OK  requirements.txt
+  OK  .gitignore
+  OK  README.md
+  MANQUE ARCHITECTURE.md
+
+== 2. FICHIERS .db / .bak DANS LE PROJET (donnees sensibles ?) ==
+  resources\seed\edupaie_seed.db  (57344 octets)
+
+== 3. REGLE DE DEPENDANCE ui > services > data > domain ==
+  Violations: 0
+
+== 4. CHEMINS EN DUR / SECRETS ==
+  main.py:24  help="Chemin vers la base SQLite (défaut : %APPDATA%/EduPaie/edupaie.db).",
+  scan_projet.py:60  pat = re.compile(r"(C:\\\\?chemin|chemin.vers|[A-Z]:\\\\?Users|password\s*=\s*[\"'][^\"']+[\"']|admin['\"]\s*,
+
+== 5. TODO / FIXME / except nus ==
+  scan_projet.py:66  log("\n== 5. TODO / FIXME / except nus ==")
+  scan_projet.py:69  if re.search(r"TODO|FIXME|XXX|^\s*except\s*:|except Exception:\s*pass", line):
+
+== 6. MIGRATIONS ET TESTS ==
+  src\edupaie\data\migrations\001_init.sql
+  src\edupaie\data\migrations\002_receipt_caissier_note.sql
+  test_pyside.py
+  tests\test_balance.py
+  tests\test_payment_service.py
+  tests\test_preview.py
+  tests\test_qmessagebox_calls.py
+  tests\test_receipt_numbering.py
+  tests\test_receipt_pdf.py
+  tests\test_repositories.py
+  tests\test_student_service.py
