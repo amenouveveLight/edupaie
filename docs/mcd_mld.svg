@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" font-family="Segoe UI, Noto Sans, sans-serif">
+  <rect width="980" height="560" fill="#f4f6f9"/>
+  <text x="30" y="34" font-size="18" font-weight="700" fill="#1e3a5f">EduPaie — Modèle de données (MCD / MLD)</text>
+
+  <!-- ================= students ================= -->
+  <g>
+    <rect x="30" y="60" width="260" height="34" rx="6" fill="#1e3a5f"/>
+    <rect x="30" y="94" width="260" height="198" fill="#ffffff" stroke="#cfd6e2"/>
+    <text x="44" y="83" font-size="14" font-weight="700" fill="#ffffff">students</text>
+    <text x="44" y="109" font-size="12" font-family="Consolas, monospace" fill="#1c2430">id                PK</text>
+    <text x="44" y="131" font-size="12" font-family="Consolas, monospace" fill="#1c2430">first_name</text>
+    <text x="44" y="153" font-size="12" font-family="Consolas, monospace" fill="#1c2430">last_name</text>
+    <text x="44" y="175" font-size="12" font-family="Consolas, monospace" fill="#1c2430">class_name</text>
+    <text x="44" y="197" font-size="12" font-family="Consolas, monospace" fill="#1c2430">guardian_phone</text>
+    <text x="44" y="219" font-size="12" font-family="Consolas, monospace" fill="#1c2430">email</text>
+    <text x="44" y="241" font-size="12" font-family="Consolas, monospace" fill="#1c2430">annual_fee   INT</text>
+    <text x="44" y="263" font-size="12" font-family="Consolas, monospace" fill="#1c2430">created_at</text>
+    <text x="44" y="285" font-size="12" font-family="Consolas, monospace" fill="#1c2430">updated_at</text>
+  </g>
+
+  <!-- ================= payments ================= -->
+  <g>
+    <rect x="360" y="60" width="260" height="34" rx="6" fill="#1e3a5f"/>
+    <rect x="360" y="94" width="260" height="154" fill="#ffffff" stroke="#cfd6e2"/>
+    <text x="374" y="83" font-size="14" font-weight="700" fill="#ffffff">payments</text>
+    <text x="374" y="109" font-size="12" font-family="Consolas, monospace" fill="#1c2430">id             PK</text>
+    <text x="374" y="131" font-size="12" font-family="Consolas, monospace" fill="#1c2430">student_id      FK</text>
+    <text x="374" y="153" font-size="12" font-family="Consolas, monospace" fill="#1c2430">amount   INT    </text>
+    <text x="374" y="175" font-size="12" font-family="Consolas, monospace" fill="#1c2430">mode     ENUM   </text>
+    <text x="374" y="197" font-size="12" font-family="Consolas, monospace" fill="#1c2430">paid_on  ISO    </text>
+    <text x="374" y="219" font-size="12" font-family="Consolas, monospace" fill="#1c2430">note           </text>
+    <text x="374" y="241" font-size="12" font-family="Consolas, monospace" fill="#1c2430">created_at     </text>
+  </g>
+
+  <!-- ================= receipts ================= -->
+  <g>
+    <rect x="690" y="60" width="260" height="34" rx="6" fill="#1e3a5f"/>
+    <rect x="690" y="94" width="260" height="264" fill="#ffffff" stroke="#cfd6e2"/>
+    <text x="704" y="83" font-size="14" font-weight="700" fill="#ffffff">receipts  (snapshot figé)</text>
+    <text x="704" y="109" font-size="12" font-family="Consolas, monospace" fill="#1c2430">id                 PK</text>
+    <text x="704" y="131" font-size="12" font-family="Consolas, monospace" fill="#1c2430">number       UNIQUE</text>
+    <text x="704" y="153" font-size="12" font-family="Consolas, monospace" fill="#1c2430">payment_id   UNIQUE</text>
+    <text x="704" y="175" font-size="12" font-family="Consolas, monospace" fill="#1c2430">student_id        FK</text>
+    <text x="704" y="197" font-size="12" font-family="Consolas, monospace" fill="#1c2430">student_name      </text>
+    <text x="704" y="219" font-size="12" font-family="Consolas, monospace" fill="#1c2430">class_name        </text>
+    <text x="704" y="241" font-size="12" font-family="Consolas, monospace" fill="#1c2430">amount      INT   </text>
+    <text x="704" y="263" font-size="12" font-family="Consolas, monospace" fill="#1c2430">mode              </text>
+    <text x="704" y="285" font-size="12" font-family="Consolas, monospace" fill="#1c2430">paid_on           </text>
+    <text x="704" y="307" font-size="12" font-family="Consolas, monospace" fill="#1c2430">balance_after     </text>
+    <text x="704" y="329" font-size="12" font-family="Consolas, monospace" fill="#1c2430">total_paid_after  </text>
+    <text x="704" y="351" font-size="12" font-family="Consolas, monospace" fill="#1c2430">issued_at         </text>
+  </g>
+
+  <!-- ================= receipt_counter ================= -->
+  <g>
+    <rect x="690" y="400" width="260" height="34" rx="6" fill="#2f6fed"/>
+    <rect x="690" y="434" width="260" height="44" fill="#ffffff" stroke="#cfd6e2"/>
+    <text x="704" y="423" font-size="14" font-weight="700" fill="#ffffff">receipt_counter</text>
+    <text x="704" y="459" font-size="12" font-family="Consolas, monospace" fill="#1c2430">year    PK       value</text>
+    <text x="704" y="481" font-size="11" fill="#6b7686">incrémenté dans la transaction du paiement</text>
+  </g>
+
+  <!-- ================= relations ================= -->
+  <!-- students 1 -- N payments -->
+  <line x1="290" y1="140" x2="360" y2="131" stroke="#44506a" stroke-width="2"/>
+  <circle cx="290" cy="140" r="4" fill="#44506a"/>
+  <circle cx="360" cy="131" r="4" fill="#44506a"/>
+  <text x="300" y="122" font-size="11" fill="#44506a">1</text>
+  <text x="342" y="122" font-size="11" fill="#44506a">N</text>
+
+  <!-- payments 1 -- 1 receipts -->
+  <line x1="620" y1="150" x2="690" y2="150" stroke="#44506a" stroke-width="2"/>
+  <circle cx="620" cy="150" r="4" fill="#44506a"/>
+  <circle cx="690" cy="150" r="4" fill="#44506a"/>
+  <text x="634" y="141" font-size="11" fill="#44506a">1</text>
+  <text x="668" y="141" font-size="11" fill="#44506a">1</text>
+
+  <!-- students 1 -- N receipts (itinéraire bas) -->
+  <polyline points="150,292 150,376 820,376 820,358" fill="none" stroke="#44506a" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="150" cy="292" r="4" fill="#44506a"/>
+  <circle cx="820" cy="358" r="4" fill="#44506a"/>
+  <text x="160" y="368" font-size="11" fill="#44506a">1</text>
+  <text x="800" y="369" font-size="11" fill="#44506a">N</text>
+
+  <!-- ================= légende ================= -->
+  <text x="30" y="522" font-size="12" fill="#44506a">Montants en entiers FCFA (jamais de REAL) · dates ISO AAAA-MM-JJ en TEXT · le statut (SOLDE / PARTIEL / NON_PAYE) n'est jamais stocké : il est dérivé du solde.</text>
+  <text x="30" y="542" font-size="12" fill="#6b7686">receipts recopie les données de l'élève au moment de l'émission : toute réimpression est identique, même après modification de la fiche.</text>
+</svg>

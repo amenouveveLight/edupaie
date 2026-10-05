@@ -1,0 +1,233 @@
+/* EduPaie — thème façon Odoo */
+
+* {
+    font-family: "Segoe UI", "Roboto", "Noto Sans", sans-serif;
+    font-size: 10pt;
+}
+
+QMainWindow, QWidget#page {
+    background: #f9fafb;
+    color: #212529;
+}
+
+/* ---------- Barre latérale ---------- */
+
+QWidget#sidebar {
+    background: #714b67;
+    min-width: 210px;
+    max-width: 210px;
+}
+
+QLabel#appTitle {
+    color: #ffffff;
+    font-size: 16pt;
+    font-weight: 700;
+    padding: 22px 18px 4px 18px;
+}
+
+QLabel#appSubtitle {
+    color: #d9c6d4;
+    font-size: 8pt;
+    padding: 0 18px 18px 18px;
+}
+
+QPushButton#navButton {
+    background: transparent;
+    color: #f0e6ed;
+    border: none;
+    border-radius: 0;
+    padding: 12px 18px;
+    margin: 0;
+    text-align: left;
+    font-size: 10pt;
+}
+
+QPushButton#navButton:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+QPushButton#navButton[active="true"] {
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    font-weight: 600;
+    border-left: 4px solid #017e84;
+}
+
+/* ---------- Titres de page ---------- */
+
+QLabel#pageTitle {
+    font-size: 16pt;
+    font-weight: 600;
+    color: #212529;
+}
+
+QLabel#pageHint {
+    color: #6c757d;
+    font-size: 9pt;
+}
+
+/* ---------- Cartes de statistiques ---------- */
+
+QFrame#statCard {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-top: 3px solid #714b67;
+    border-radius: 4px;
+    padding: 14px;
+    min-width: 150px;
+}
+
+QLabel#statTitle {
+    color: #6c757d;
+    font-size: 8pt;
+}
+
+QLabel#statValue {
+    font-size: 15pt;
+    font-weight: 600;
+    color: #714b67;
+}
+
+QFrame#statCard[tone="good"] #statValue { color: #28a745; }
+QFrame#statCard[tone="warn"] #statValue { color: #e69500; }
+QFrame#statCard[tone="bad"]  #statValue { color: #dc3545; }
+
+/* ---------- Badges de statut ---------- */
+
+QLabel#badge {
+    border-radius: 9px;
+    padding: 3px 10px;
+    font-size: 8pt;
+    font-weight: 600;
+}
+
+QLabel#badge[status="SOLDE"]    { background: #d4edda; color: #1e7e34; }
+QLabel#badge[status="PARTIEL"]  { background: #fff3cd; color: #946c00; }
+QLabel#badge[status="NON_PAYE"] { background: #f8d7da; color: #b02a37; }
+
+/* ---------- Tableaux (vue liste) ---------- */
+
+QTableView {
+    background: #ffffff;
+    alternate-background-color: #fbfbfc;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    gridline-color: #f1f3f5;
+    selection-background-color: #e6f2f2;
+    selection-color: #212529;
+    padding: 2px;
+}
+
+QTableView::item {
+    padding: 6px 8px;
+    border: none;
+}
+
+QHeaderView::section {
+    background: #ffffff;
+    color: #495057;
+    font-weight: 600;
+    padding: 8px;
+    border: none;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* ---------- Champs (soulignés comme dans Odoo) ---------- */
+
+QLineEdit, QComboBox, QDateEdit {
+    background: #ffffff;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    padding: 7px 4px;
+    selection-background-color: #017e84;
+}
+
+QLineEdit:focus, QComboBox:focus, QDateEdit:focus {
+    border-bottom: 2px solid #017e84;
+}
+
+QLineEdit[invalid="true"] {
+    border-bottom: 2px solid #dc3545;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 24px;
+}
+
+/* ---------- Boutons ---------- */
+
+QPushButton {
+    border-radius: 3px;
+    padding: 7px 16px;
+    border: 1px solid #ced4da;
+    background: #ffffff;
+    color: #212529;
+}
+
+QPushButton:hover { background: #e9ecef; }
+
+QPushButton[variant="primary"] {
+    background: #714b67;
+    border: 1px solid #714b67;
+    color: #ffffff;
+    font-weight: 600;
+}
+QPushButton[variant="primary"]:hover { background: #5e3e55; }
+
+QPushButton[variant="danger"] {
+    background: #ffffff;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+QPushButton[variant="danger"]:hover { background: #f8d7da; }
+
+QPushButton[variant="flat"] {
+    background: transparent;
+    border: none;
+    color: #017e84;
+}
+QPushButton[variant="flat"]:hover { background: #e6f2f2; }
+
+QPushButton:disabled {
+    color: #adb5bd;
+    background: #f1f3f5;
+    border-color: #e9ecef;
+}
+
+/* ---------- Boîtes ---------- */
+
+QFrame#panel {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+QLabel#soldeBig {
+    font-size: 20pt;
+    font-weight: 600;
+}
+
+QLabel#warning {
+    color: #946c00;
+    background: #fff3cd;
+    border-radius: 3px;
+    padding: 8px 10px;
+}
+
+QLabel#infoMuted {
+    color: #6c757d;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 2px;
+}
+QScrollBar::handle:vertical {
+    background: #ced4da;
+    border-radius: 5px;
+    min-height: 24px;
+}
+QScrollBar::add-line, QScrollBar::sub-line { height: 0; width: 0; }
